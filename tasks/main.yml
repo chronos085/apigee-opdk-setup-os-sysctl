@@ -13,6 +13,7 @@
     value: "{{ item.value }}"
     state: present
     sysctl_set: yes
+    ignoreerrors: yes
   with_items: "{{ sysctl_ipv6 }}"
   when: ipv6_status.stat.exists == true
 
